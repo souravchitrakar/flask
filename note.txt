@@ -1,0 +1,15 @@
+virtualenv venv
+source venv/bin/activate
+pip freeze --local > requirements.txt
+deactivate
+
+remove venv to push to git
+
+pip3 install -r requirements.txt
+
+export FLASK_APP=app.py
+export FLASK_DEBUG=1
+flask run
+
+if __name__ == "__main__":
+	app.run(debug=True)
